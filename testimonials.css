@@ -1,0 +1,682 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+/* Active Page Link Color */
+.navbar .nav-link.active {
+    color: #327dcd !important;  /* Change to blue for active link */
+}
+
+/* Optional: Styling for hover and active state */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #0056b3 !important;  /* Darker blue when hovered or focused */
+}
+
+/* Testimonials Section ////////////////////////////////////////*/
+/* Testimonial Section */
+.testimonial-section {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    padding: 80px 20px;
+    background: #f6f6f6; /* Set background to white */
+    position: relative;
+}
+
+/* Section Title */
+.section-title {
+    color: #333;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    position: relative;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* Elegant Underline */
+.section-title::after {
+    content: "";
+    width: 20%;
+    height: 4px;
+    background: #007bff;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%) scaleX(1);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+    width: 100%;
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    flex: 0 0 60%;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(2, 141, 255, 0.35); /* Light glass effect */
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    color: #333; /* Dark text for contrast */
+    margin: 0 15px;
+    opacity: 0.9;
+    transform: scale(0.9);
+    position: relative;
+}
+
+/* Active Card Effect */
+.testimonial-card.active {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D Hover Effect */
+.testimonial-card:hover {
+    transform: translateY(-10px) scale(1.12);
+    box-shadow: 0px 14px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonial Image */
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover .testimonial-image {
+    transform: scale(1.15);
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-family: "Merriweather", serif;
+    font-size: 25px;
+    color: #ffffff; /* Darker text */
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Parallax Hover Effect */
+.testimonial-card:hover {
+    transform: perspective(1000px) rotateY(10deg);
+}
+
+/* Carousel Navigation Arrows */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: -40px;
+}
+
+.carousel-control-next {
+    right: -40px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 18px;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.5);
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 0px 25px rgba(0, 86, 179, 0.7);
+    transform: scale(1.2);
+}
+
+
+
+/* video Testimonials Section ////////////////////////////////////////*/
+
+.video-testimonial-section {
+    padding: 60px 0;
+    background-color:#f6f6f6;
+    text-align: center;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Video Testimonial Container */
+.video-testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Individual Video Testimonial Card */
+.video-testimonial-card {
+    width: 300px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* Entrance animation */
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    animation: zoomFadeIn 1s ease-in-out forwards;
+    animation-delay: var(--delay, 0s);
+    
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s ease-in-out;
+}
+
+/* Different delays for staggered appearance */
+.video-testimonial-card:nth-child(1) {
+    --delay: 0s;
+}
+.video-testimonial-card:nth-child(2) {
+    --delay: 0.2s;
+}
+.video-testimonial-card:nth-child(3) {
+    --delay: 0.4s;
+}
+.video-testimonial-card:nth-child(4) {
+    --delay: 0.6s;
+}
+
+/* Hover Effect: 3D Tilt & Glow */
+.video-testimonial-card:hover {
+    transform: scale(1.05) rotateX(8deg) rotateY(8deg);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
+    filter: brightness(1.1);
+    animation-play-state: paused;
+}
+
+/* Glow Effect on Hover */
+.video-testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: inherit;
+}
+
+.video-testimonial-card:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(158, 176, 195, 0.8);
+}
+
+/* Video Styling */
+.video-testimonial {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Testimonial Description */
+.video-testimonial-description {
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* Testimonial Author Name */
+.video-testimonial-author {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Modal Styles */
+.video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.93);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.video-modal .modal-video {
+    width: 100%;
+    max-width: 800px;
+    max-height: 70vh;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomFadeIn {
+    0% { opacity: 0; transform: translateY(30px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-testimonial-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* FOOTER ////////////////////////////////////////////////////////////*/
+/* Footer Styling */
+.footer {
+    background: #000; /* Black background */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Footer Container */
+.footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Footer Columns */
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Footer Logo */
+.footer-logo img {
+    height: 80px;
+    display: block;
+    margin: 0; /* Center the logo */
+    transition: transform 0.3s ease-in-out;
+    /* filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); */
+}
+
+/* Logo Hover Effect */
+.footer-logo:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Titles */
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 14px;
+    color: #e0e0e0;
+    max-width: 250px;
+}
+
+/* Footer Links */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effects */
+.footer-link:hover {
+    color:  #007bff;
+    transform: translateX(5px);
+}
+
+/* Contact Info */
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Contact Links */
+.contact-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.1s;
+}
+
+/* Hover effect */
+.contact-link:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.footer .social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Social Icons Hover */
+.social-icon:hover {
+    transform: scale(1.3);
+    color: #007bff;
+}
+
+/* Footer Divider */
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* Copyright */
+.footer .text-center p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        max-width: none;
+    }
+
+    .footer ul li {
+        font-size: 13px;
+    }
+
+    .social-icon {
+        font-size: 16px;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+    }
+}
+
+
+/* Floating animated elements */
+.animated-bg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-30px) scale(1.2);
+        opacity: 0.4;
+    }
+}
+/* Base styling for animated objects with lower opacity */
+.animated-object {
+    position: absolute;
+    opacity: 0.3; /* Reduced opacity for lighter effect */
+}
+
+/* Candlestick Bars */
+.candlestick {
+    width: 12px;
+    height: 50px;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.bullish {
+    background: #00ff00;
+    border-top: 20px solid #00ff00;
+    border-bottom: 20px solid #00ff00;
+    opacity: 0.3; /* Lower opacity */
+}
+
+.bearish {
+    background: #ff0000;
+    border-top: 20px solid #ff0000;
+    border-bottom: 20px solid #ff0000;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Trading Arrows */
+.arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+.up-arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #00ff00;
+}
+
+.down-arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #ff0000;
+}
+
+/* Floating Coins */
+.dollar-coin, .bitcoin-coin, .rupee-coin {
+    width: 40px;
+    height: 40px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.4); /* Reduced shadow intensity */
+    opacity: 0.3; /* Lower opacity */
+}
+.etf-symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e7fb0b;
+}
+.dollar-coin::after { content: "$"; }
+.bitcoin-coin { background: orange; opacity: 0.3; }
+.bitcoin-coin::after { content: "₿"; }
+.rupee-coin { background: rgb(255, 255, 255); opacity: 0.3; }
+.rupee-coin::after { content: "₹"; }
+
+/* Moving Stock Chart */
+.stock-chart {
+    width: 100px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    transform: rotate(30deg);
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Pie Chart Segments */
+.pie-chart {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(#ff0000 0% 30%, #00ff00 30% 70%, #0000ff 70% 100%);
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Moving Percentage Symbols */
+.percentage-symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f9a825;
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Random Positioning */
+.candlestick:nth-child(1) { top: 10%; left: 10%; }
+.candlestick:nth-child(2) { top: 30%; right: 15%; }
+.arrow:nth-child(3) { top: 50%; left: 40%; }
+.arrow:nth-child(4) { top: 70%; right: 30%; }
+.dollar-coin { top: 40%; left: 50%; }
+.bitcoin-coin { top: 20%; right: 60%; }
+.rupee-coin { bottom: 30%; left: 70%; }
+.stock-chart { bottom: 10%; left: 60%; }
+.pie-chart { bottom: 20%; right: 40%; }
+.percentage-symbol { top: 35%; right: 50%; }
+.etf-symbol:nth-child(11) { top: 45%; left: 20%; }
+.etf-symbol:nth-child(12) { top: 50%; right: 25%; }
+/* .etf-symbol:nth-child(13) { bottom: 20%; left: 50%; } */
+.etf-symbol:nth-child(14) { bottom: 5%; right: 10%; }
+
+
+
+/* button  ///////////////////////////////////////////////////// */
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#scrollTopBtn:hover {
+    background: #0a2a4d;
+}

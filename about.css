@@ -1,0 +1,839 @@
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+}
+/* Active Page Link Color */
+.navbar .nav-link.active {
+    color: #327dcd !important;  /* Change to blue for active link */
+}
+
+/* Optional: Styling for hover and active state */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #0056b3 !important;  /* Darker blue when hovered or focused */
+}
+
+
+
+/* History ////////////////////////////////////*/
+/* History Section */
+.history-section {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f6f6f6;
+}
+
+/* Timeline Container */
+.history-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* Timeline Items */
+.history-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four cards per row on desktop */
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    z-index: 2; /* Cards appear above the timeline line */
+}
+
+/* Each History Item */
+.history-item {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    opacity: 0; /* Initially Hidden */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Fade-In Animation for Cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay Animation for Each Item */
+.history-item:nth-child(1) { animation-delay: 0.2s; }
+.history-item:nth-child(2) { animation-delay: 0.4s; }
+.history-item:nth-child(3) { animation-delay: 0.6s; }
+.history-item:nth-child(4) { animation-delay: 0.8s; }
+.history-item:nth-child(5) { animation-delay: 1s; }
+.history-item:nth-child(6) { animation-delay: 1.2s; }
+.history-item:nth-child(7) { animation-delay: 1.4s; }
+.history-item:nth-child(8) { animation-delay: 1.6s; }
+
+/* Optional Dashed Connector for Each Item */
+.history-item:before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    border-right: 2px dashed #1e74ca;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Small Blue Line Above Each Card */
+.history-item::after {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    width: 120px;
+    height: 3px;
+    background-color: #3489de;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Event Date Styling */
+.event-date {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: fit-content;
+    z-index: 3;
+}
+
+/* History Content Box */
+.history-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-height: 270px;
+    margin: auto;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect - Lift & Shadow */
+.history-content:hover {
+    /* transform: translateY(-10px); */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Color Transition */
+.history-content p {
+    transition: color 0.3s ease;
+}
+
+/* Title Color Change on Hover */
+.history-content:hover h5 {
+    color: #007bff;
+}
+
+/* History Card Title */
+.history-content h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* History Card Paragraph */
+.history-content p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Order for Second Row Items on Desktop */
+.history-item:nth-child(5) {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.history-item:nth-child(6) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+.history-item:nth-child(7) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+.history-item:nth-child(8) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .history-items {
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row on tablets */
+        width: 90%;
+        margin: auto;
+    }
+    
+    /* Adjust grid ordering for tablet */
+    .history-item:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .history-item:nth-child(6) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .history-item:nth-child(7) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    .history-item:nth-child(8) {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+}
+
+/* Mobile Responsive - Force One Card per Row */
+@media (max-width: 768px) {
+    .history-items {
+        grid-template-columns: 1fr; /* Only one card per row */
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* Override custom ordering */
+    .history-item:nth-child(n) {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+    
+    /* Ensure timeline line remains centered */
+    .history-timeline:before {
+        top: 50px;
+        left: 5%;
+        width: 90%;
+    }
+}
+
+
+/* vission and misssion ////////////////////////////////////////////////////////////*/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #f6f6f6;
+}
+
+.container-mission {
+    max-width: 1500px;
+    margin: auto;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.flex-container-mission {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.flex-slide-mission {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    height: 300px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
+
+.flex-slide-mission:hover {
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.flex-title-mission {
+    font-size: 2em;
+    font-weight: bold;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+/* Center align the content */
+.flex-about-mission {
+    opacity: 0;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    padding: 20px;
+    width: 90%;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    position: relative;
+    text-align: center; /* Center-align the text */
+    transform: translateY(20px);
+    border-radius: 8px;
+}
+
+/* Add padding inside the content */
+.flex-about-mission ul {
+    padding: 0;
+    list-style: none;
+    text-align: left; /* Align bullet points to the left */
+    display: inline-block; /* Keeps the list centered as a block */
+}
+
+.flex-about-mission ul li {
+    font-size: 1em;
+    color: #333;
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Add a custom bullet icon */
+.flex-about-mission ul li::before {
+    content: "•"; 
+    color: #007bff; 
+    font-size: 1.2em;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Hover effects */
+.flex-slide-mission:hover .flex-title-mission {
+    opacity: 0;
+}
+
+.flex-slide-mission:hover .flex-about-mission {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background Images */
+.home-mission {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/vision.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-mission {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/mision.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .flex-slide-mission {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .flex-about-mission {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+
+
+/* expertice //////////////////////////////////////////*/
+/* Expertise Section */
+.expertise {
+    padding: 80px 0;
+    background: #f6f6f6; /* Soft background for contrast */
+    text-align: center;
+}
+
+/* Section Title with Animation */
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.section-title::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: #007bff;
+    display: block;
+    margin: auto;
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+.section-title:hover::after {
+    width: 100%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Raleway:wght@400;600&display=swap');
+
+.expert-subtitle {
+    color: #007bff; /* Blue color */
+    font-size: 12px; /* Slightly larger for readability */
+    font-weight: 800; /* Medium weight for clarity */
+    font-family: "Raleway", sans-serif; /* Clean & modern font */
+    font-style: italic; /* Gives a testimonial feel */
+    
+    padding: 0px;
+}
+.expert-content h4 {
+    color: #007bff; /* Deep blue for a professional look */
+    font-size: 20px; /* Slightly larger for impact */
+    font-weight: 700; /* Bold for emphasis */
+    font-family: "Poppins", sans-serif; /* Modern and clean font */
+    letter-spacing: 1px; /* Slight spacing for elegance */
+    margin-top: 20px; /* Spacing above */
+    margin-bottom: 12px; /* Spacing below */
+    border-left: 4px solid #007bff; /* Adds a stylish blue left border */
+    padding-left: 12px; /* Adjusts text position after the border */
+}
+
+
+
+/* Expert Content Box */
+.expert-content {
+    text-align: left;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.expert-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Expert Name & Role */
+.expert-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.expert-role {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Expert Description */
+.expert-description {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Bullet Points */
+.custom-bullets {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.custom-bullets li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    color: #333;
+}
+
+/* Custom Bullet Styling */
+.custom-bullets li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #007bff;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Expert Image with Hover Effect */
+.expert-image {
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.expert-image img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.expert-image:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+/* FOOTER ////////////////////////////////////////////////////////////*/
+/* Footer Styling */
+.footer {
+    background: #000; /* Black background */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Footer Container */
+.footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Footer Columns */
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Footer Logo */
+.footer-logo img {
+    height: 80px;
+    display: block;
+    margin: 0; /* Center the logo */
+    transition: transform 0.3s ease-in-out;
+    /* filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3)); */
+}
+
+/* Logo Hover Effect */
+.footer-logo:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Titles */
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 14px;
+    color: #e0e0e0;
+    max-width: 250px;
+}
+
+/* Footer Links */
+.footer-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Hover Effects */
+.footer-link:hover {
+    color:  #007bff;
+    transform: translateX(5px);
+}
+
+/* Contact Info */
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Contact Links */
+.contact-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.1s;
+}
+
+/* Hover effect */
+.contact-link:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.footer .social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Social Icons Hover */
+.social-icon:hover {
+    transform: scale(1.3);
+    color: #007bff;
+}
+
+/* Footer Divider */
+.footer-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* Copyright */
+.footer .text-center p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-title {
+        font-size: 18px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        max-width: none;
+    }
+
+    .footer ul li {
+        font-size: 13px;
+    }
+
+    .social-icon {
+        font-size: 16px;
+    }
+
+    .footer-logo img {
+        margin: 0 auto;
+    }
+}
+
+
+/* Floating animated elements */
+.animated-bg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: float 5s infinite ease-in-out alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-30px) scale(1.2);
+        opacity: 0.4;
+    }
+}
+/* Base styling for animated objects with lower opacity */
+.animated-object {
+    position: absolute;
+    opacity: 0.3; /* Reduced opacity for lighter effect */
+}
+
+/* Candlestick Bars */
+.candlestick {
+    width: 12px;
+    height: 50px;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.bullish {
+    background: #00ff00;
+    border-top: 20px solid #00ff00;
+    border-bottom: 20px solid #00ff00;
+    opacity: 0.3; /* Lower opacity */
+}
+
+.bearish {
+    background: #ff0000;
+    border-top: 20px solid #ff0000;
+    border-bottom: 20px solid #ff0000;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Trading Arrows */
+.arrow {
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+.up-arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #00ff00;
+}
+
+.down-arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid #ff0000;
+}
+
+/* Floating Coins */
+.dollar-coin, .bitcoin-coin, .rupee-coin {
+    width: 40px;
+    height: 40px;
+    background: gold;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.4); /* Reduced shadow intensity */
+    opacity: 0.3; /* Lower opacity */
+}
+.etf-symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e7fb0b;
+}
+.dollar-coin::after { content: "$"; }
+.bitcoin-coin { background: orange; opacity: 0.3; }
+.bitcoin-coin::after { content: "₿"; }
+.rupee-coin { background: rgb(255, 255, 255); opacity: 0.3; }
+.rupee-coin::after { content: "₹"; }
+
+/* Moving Stock Chart */
+.stock-chart {
+    width: 100px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    transform: rotate(30deg);
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Pie Chart Segments */
+.pie-chart {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(#ff0000 0% 30%, #00ff00 30% 70%, #0000ff 70% 100%);
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Moving Percentage Symbols */
+.percentage-symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f9a825;
+    position: absolute;
+    opacity: 0.3; /* Lower opacity */
+}
+
+/* Random Positioning */
+.candlestick:nth-child(1) { top: 10%; left: 10%; }
+.candlestick:nth-child(2) { top: 30%; right: 15%; }
+.arrow:nth-child(3) { top: 50%; left: 40%; }
+.arrow:nth-child(4) { top: 70%; right: 30%; }
+.dollar-coin { top: 40%; left: 50%; }
+.bitcoin-coin { top: 20%; right: 60%; }
+.rupee-coin { bottom: 30%; left: 70%; }
+.stock-chart { bottom: 10%; left: 60%; }
+.pie-chart { bottom: 20%; right: 40%; }
+.percentage-symbol { top: 35%; right: 50%; }
+.etf-symbol:nth-child(11) { top: 45%; left: 20%; }
+.etf-symbol:nth-child(12) { top: 50%; right: 25%; }
+/* .etf-symbol:nth-child(13) { bottom: 20%; left: 50%; } */
+.etf-symbol:nth-child(14) { bottom: 5%; right: 10%; }
+
+
+/* button  ///////////////////////////////////////////////////// */
+/* Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* Hidden initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+#scrollTopBtn:hover {
+    background: #0a2a4d;
+}
