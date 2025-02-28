@@ -210,7 +210,7 @@ body {
 /* Video Card */
 .video-card {
     flex: 1 1 calc(33.33% - 30px); /* Three cards per row */
-    max-width: 350px;
+    max-width: 330px;
     height: 550px;
     cursor: pointer;
     text-align: center;
@@ -320,6 +320,7 @@ body {
     background: black;
     object-fit: cover;
 }
+
 
 
 /* FOOTER ////////////////////////////////////////////////////////////*/
