@@ -211,11 +211,7 @@ body {
 .video-card {
     flex: 1 1 calc(33.33% - 30px); /* Three cards per row */
     max-width: 300px;
-<<<<<<< HEAD
-    height: 550px;
-=======
     height: 595px;
->>>>>>> 263c8fc (changes)
     cursor: pointer;
     text-align: center;
     position: relative;
