@@ -211,7 +211,7 @@ body {
 .video-card {
     flex: 1 1 calc(33.33% - 30px); /* Three cards per row */
     max-width: 300px;
-    height: 595px;
+    height: 600px;
     cursor: pointer;
     text-align: center;
     position: relative;
@@ -244,7 +244,7 @@ body {
 
 /* Video Description */
 .video-description {
-    padding: 10px;
+    padding: 8px;
     margin-top: 10  px;
     font-size: 1rem;
     color: #333;
