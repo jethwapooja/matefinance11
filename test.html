@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Progress Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .machine-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .machine {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .machine:hover {
+            transform: scale(1.1);
+        }
+        .machine img {
+            width: 50px;
+            height: 50px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+        }
+        .popup img {
+            width: 100px;
+            height: 100px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Machine Progress Dashboard</h2>
+        <div class="machine-grid" id="machineGrid"></div>
+    </div>
+    
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <h3 id="popupTitle"></h3>
+        <img src="machine-icon.png" alt="Machine">
+        <p id="popupProgress"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        const machineGrid = document.getElementById('machineGrid');
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupProgress = document.getElementById('popupProgress');
+        
+        const machines = Array.from({ length: 40 }, (_, i) => ({
+            name: `Machine ${i + 1}`,
+            progress: Math.floor(Math.random() * 100)
+        }));
+
+        machines.forEach((machine, index) => {
+            const machineDiv = document.createElement('div');
+            machineDiv.classList.add('machine');
+            machineDiv.innerHTML = `
+                <img src="machine-icon.png" alt="Machine">
+                <p>${machine.name}</p>
+            `;
+            machineDiv.onclick = () => openPopup(machine);
+            machineGrid.appendChild(machineDiv);
+        });
+
+        function openPopup(machine) {
+            popupTitle.innerText = machine.name;
+            popupProgress.innerText = `Progress: ${machine.progress}%`;
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        function closePopup() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

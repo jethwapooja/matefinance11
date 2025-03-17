@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 
 </head>
 <body>
@@ -31,67 +35,63 @@
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Blog -->
     <section class="blogs-section">
         <div class="container">
             <h2 class="text-center section-title">Our Latest Blogs</h2>
             <div class="row">
                 <!-- Blog Post 1 -->
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <img src="image/b1.jpg" alt="Blog Image 1" class="blog-img">
-                        <h2 class="blog-title">ETF Trading: An Overview</h2>
-                        <!-- <p class="blog-description">ETF Trading: An Overview</p> -->
-                        
-                        <!-- PDF Button -->
-                        <a href="blog/BLOG 1.pdf" target="_blank" class="pdf-button" style="margin-top: 45px;">
-                            <span>📄 Read Blog</span>
-                        </a>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="blog1.html" class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="image/b1.jpg" alt="ETF Trading" class="blog-img">
+                            <div class="overlay"><span>Read More</span></div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">ETF Trading: An Overview</h2>
+                            <p class="blog-description">Learn how ETFs work and why they are essential for portfolio diversification.</p>
+                        </div>
+                    </a>
                 </div>
-                
-
+    
                 <!-- Blog Post 2 -->
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <img src="image/b2.jpg" alt="Blog Image 2" class="blog-img">
-                        <h1 class="blog-title">Why Trading in the Stock Market is Speculative ? How to use it in trader’s advantage</h1>
-                        <!-- <p class="blog-description">Why Trading in the Stock Market is Speculative ? How to use it in trader’s advantage</p> -->
-                
-                        <!-- PDF Button -->
-                        <a href="blog/Blog 2.pdf" target="_blank" class="pdf-button">
-                            <span>📄 Read Blog</span>
-                        </a>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="blog2.html" class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="image/b2.jpg" alt="Stock Market Speculation" class="blog-img">
+                            <div class="overlay"><span>Read More</span></div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">Stock Market Speculation</h2>
+                            <p class="blog-description">Understand speculation in trading and how to use it for strategic gains.</p>
+                        </div>
+                    </a>
                 </div>
-                
-
+    
                 <!-- Blog Post 3 -->
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <img src="image/b3.jpg" alt="Blog Image 3" class="blog-img">
-                        <h3 class="blog-title">Rule-Based Trading and the Importance of a Mentor</h3>
-                        <!-- <p class="blog-description">Rule-Based Trading and the Importance of a Mentor</p> -->
-                
-                        <!-- PDF Button -->
-                        <a href="blog/BLOG 3.pdf" target="_blank" class="pdf-button" style="margin-top: 20px;">
-                            <span>📄 Read Blog</span>
-                        </a>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="blog3.html" class="blog-card">
+                        <div class="blog-image-container">
+                            <img src="image/b3.jpg" alt="Rule-Based Trading" class="blog-img">
+                            <div class="overlay"><span>Read More</span></div>
+                        </div>
+                        <div class="blog-content">
+                            <h2 class="blog-title">Rule-Based Trading & Mentorship</h2>
+                            <p class="blog-description">Learn the importance of discipline and finding the right mentor.</p>
+                        </div>
+                    </a>
                 </div>
-                
             </div>
         </div>
     </section>
-
     <!-- video blog -->
-    <section class="video-section">
+    <section class="video-section"> 
         <h2 class="section-title">Watch Our Videos</h2>
         <div class="video-container">
             <!-- Video Card 1 -->
@@ -140,7 +140,6 @@
             </div> -->
         </div>
     </section>
-    
     <!-- Modal for Enlarged Video -->
     <div id="videoModal" class="video-modal">
         <span class="close-btn" onclick="closeModal()">×</span>
@@ -148,7 +147,6 @@
             <source id="modalSource" type="video/mp4">
         </video>
     </div>
-
     <!-- Footerr -->
     <footer class="footer">
         <!-- Finance-themed Animated Objects -->
@@ -184,6 +182,7 @@
                         <li><a href="services.html" class="footer-link">Services</a></li>
                         <li><a href="resources.html" class="footer-link">Resources</a></li>
                         <li><a href="testimonials.html" class="footer-link">Testimonials</a></li>
+                        <li><a href="faqs.html" class="footer-link">FAQs</a></li>
                         <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                     </ul>
                 </div>
@@ -241,5 +240,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <!-- jQuery & Owl Carousel JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 </body>
 </html>

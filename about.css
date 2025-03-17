@@ -3,6 +3,9 @@ body {
     color: white;
 }
 /* Active Page Link Color */
+.nav-item{
+    font-weight:600;
+}
 .navbar .nav-link.active {
     color: #327dcd !important;  /* Change to blue for active link */
 }
