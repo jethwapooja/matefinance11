@@ -122,6 +122,26 @@ document.querySelectorAll(".faq-question").forEach(button => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    function setEqualCardHeight() {
+        const cards = document.querySelectorAll('.blog-card');
+        let maxHeight = 0;
+
+        cards.forEach(card => {
+            card.style.height = 'auto'; 
+            maxHeight = Math.max(maxHeight, card.offsetHeight);
+        });
+
+        cards.forEach(card => {
+            card.style.height = `${maxHeight}px`;
+        });
+    }
+
+    setEqualCardHeight();
+    window.addEventListener('resize', setEqualCardHeight);
+});
+
+
 
 
 

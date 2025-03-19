@@ -18,45 +18,41 @@ body {
 
 /* Blogs Section //////////////////////////////////////////////////////////////////////*/
 /* Blog Section */
-.blogs-section {      
-    padding: 60px 20px;
-    background-color: #f6f6f6;
+.blogs-section {
+    padding: 100px 20px;
+    background: #f6f6f6;
     text-align: center;
 }
 
 /* Section Title */
-/* Section Title */
 .section-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
     position: relative;
-    display: inline-block; /* Ensures underline matches text width */
+    text-align: center;
 }
 
 /* Underline Effect */
 .section-title::after {
     content: "";
     display: block;
-    width: 0;
-    height: 3px;
-    background: #007bff; /* Blue underline */
-    transition: width 0.3s ease-in-out;
-    margin-top: 5px;
+    width: 50%;                         /* Width adjusts to half of text length */
+    height: 4px;
+    background: #007bff;                 /* Underline color */
+    margin: 10px auto 0;                 /* Center the line */
+    transition: width 0.4s ease;         /* Smooth transition */
 }
 
-/* Expand Underline on Hover */
+/* Hover Effect - Expand to full length */
 .section-title:hover::after {
-    width: 100%; /* Expands to match text size */
+    width: 100%;
 }
 
-/* Blog Cards Row */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
 
 /* Blog Card */
 .blog-card {
@@ -64,62 +60,57 @@ body {
     flex-direction: column;
     justify-content: space-between;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
     text-decoration: none;
-    color: inherit;
-    transition: all 0.4s ease-in-out;
-    width: 100%;
-    max-width: 350px;
-    min-height: 400px; /* Ensures equal card height */
+    color: #333;
+    transition: all 0.5s ease;
     overflow: hidden;
-    position: relative;
+    min-height: 500px;  /* Ensures minimum height */
+    margin: 20px;
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1); */
 }
 
-/* Hover Effects */
+/* Hover Glow Effect */
 .blog-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 25px rgba(0, 123, 255, 0.3);
-    cursor: pointer;
+    box-shadow: 0 0 25px rgba(73, 75, 78, 0.8);
 }
 
 /* Blog Image */
 .blog-image-container {
     width: 100%;
-    height: 220px;
+    height: 300px;
     overflow: hidden;
     position: relative;
-    border-radius: 12px 12px 0 0;
 }
 
 .blog-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s;
 }
 
-/* Hover Effect on Image */
+/* Hover Zoom Effect */
 .blog-card:hover .blog-img {
     transform: scale(1.1);
 }
 
-/* Clickable Overlay */
+/* Gradient Overlay */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
     opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.4s;
 }
 
 .blog-card:hover .overlay {
@@ -128,37 +119,62 @@ body {
 
 /* Blog Content */
 .blog-content {
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    min-height: 120px;
 }
 
 /* Blog Title */
 .blog-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
+    color: #007bff;
+    margin-bottom: 20px;
 }
 
 /* Blog Description */
 .blog-description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #555;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .row {
-        justify-content: center;
-    }
-    
-    .blog-card {
-        max-width: 90%;
-        margin-bottom: 20px;
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    width: 8%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #007bff;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+}
+
+/* Ensure controls are outside the cards */
+.carousel-control-prev {
+    left: -5%;
+}
+
+.carousel-control-next {
+    right: -5%;
+}
+
+/* Responsive Styling */
+
+@media (max-width: 1200px) {
+    .col-lg-6 {
+        max-width: 100%;
     }
 }
 
+@media (max-width: 768px) {
+    .col-lg-6, .col-md-6, .col-sm-12 {
+        max-width: 100%;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 12%;
+    }
+}
 
 /* video blog ////////////////////////////////////////////////////////*/
 /* Global Styles */
