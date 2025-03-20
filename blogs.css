@@ -173,10 +173,12 @@ body {
 }
 
 /* Headings */
-h1, h2, h3 {
+h2, h3 {
     color: #0077ff;
 }
-
+h1{
+    color: white;
+}
 h1 {
     font-size: 28px;
     margin-bottom: 10px;
