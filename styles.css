@@ -76,7 +76,7 @@ body {
 /* Text Carousel */
 #text-carousel {
     position: relative;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +115,11 @@ body {
     #hero h1 {
         font-size: 3rem;
     }
-
+    #text-carousel {
+    
+        height: 100px;
+    
+    }
     #text-carousel p {
         font-size: 1.4rem;
     }
