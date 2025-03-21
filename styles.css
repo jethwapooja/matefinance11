@@ -76,7 +76,7 @@ body {
 /* Text Carousel */
 #text-carousel {
     position: relative;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,9 +120,7 @@ body {
         font-size: 1.4rem;
     }
 
-    .hero-bottom-curve {
-        height: 80px;
-    }
+   
 }
 
 
