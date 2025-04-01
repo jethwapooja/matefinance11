@@ -24,21 +24,7 @@ document.querySelectorAll(".nav-link").forEach(link => {
     link.setAttribute("target", "_self"); // Ensures it opens in the same tab
 });
 
-function openModal(videoId) {
-    var videoSrc = document.getElementById(videoId).querySelector('source').src;
-    var modal = document.getElementById('videoModal');
-    var modalVideo = document.getElementById('modalVideo');
-    var modalSource = document.getElementById('modalSource');
 
-    modalSource.src = videoSrc;
-    modalVideo.load(); // Reload the video with the new source
-    modal.style.display = "flex"; // Show the modal
-}
-
-function closeModal() {
-    var modal = document.getElementById('videoModal');
-    modal.style.display = "none"; // Close the modal
-}
 
 
 // Simple script to cycle through testimonials (e.g., use for automatic sliding or a carousel library)

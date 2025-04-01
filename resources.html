@@ -148,12 +148,12 @@
     
     
     <!-- video blog -->
-    <section class="video-section"> 
+    <section class="video-section">
         <h2 class="section-title">Watch Our Videos</h2>
         <div class="video-container">
             <!-- Video Card 1 -->
             <div class="video-card" onclick="openModal('video1')">
-                <video class="video" id="video1" muted autoplay loop>
+                <video class="video" id="video1" muted loop>
                     <source src="Finalvideo/1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -162,7 +162,7 @@
     
             <!-- Video Card 2 -->
             <div class="video-card" onclick="openModal('video2')">
-                <video class="video" id="video2" muted autoplay loop>
+                <video class="video" id="video2" muted loop>
                     <source src="Finalvideo/2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -171,7 +171,7 @@
     
             <!-- Video Card 3 -->
             <div class="video-card" onclick="openModal('video3')">
-                <video class="video" id="video3" muted autoplay loop>
+                <video class="video" id="video3" muted loop>
                     <source src="Finalvideo/3.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -180,30 +180,23 @@
     
             <!-- Video Card 4 -->
             <div class="video-card" onclick="openModal('video4')">
-                <video class="video" id="video4" muted autoplay loop>
+                <video class="video" id="video4" muted loop>
                     <source src="Finalvideo/5.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <p class="video-description">Learn practical tips and techniques from professionals.</p>
             </div>
-    
-            <!-- Video Card 5 -->
-            <!-- <div class="video-card" onclick="openModal('video5')">
-                <video class="video" id="video5" muted autoplay loop>
-                    <source src="Final Video/5.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <p class="video-description">Master new skills with hands-on demonstrations.</p>
-            </div> -->
         </div>
     </section>
+    
     <!-- Modal for Enlarged Video -->
-    <div id="videoModal" class="video-modal">
-        <span class="close-btn" onclick="closeModal()">×</span>
+    <div id="videoModal" class="video-modal" onclick="closeModal()">
+        <span class="close-btn" onclick="closeModal(event)">×</span>
         <video id="modalVideo" class="modal-video" controls>
             <source id="modalSource" type="video/mp4">
         </video>
     </div>
+    
     <!-- Footerr -->
     <footer class="footer">
         <!-- Finance-themed Animated Objects -->

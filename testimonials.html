@@ -97,18 +97,17 @@
         <div class="video-testimonial-container">
             <!-- Video Testimonial Card 1 -->
             <div class="video-testimonial-card" onclick="openModal('video1')">
-                <video class="video-testimonial" id="video1" autoplay loop muted>
+                <video class="video-testimonial" id="video1" muted loop>
                     <source src="student feedback/student reel 1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <p class="video-testimonial-description">This is the description of the first video testimonial.</p>
-                
                 <p class="video-testimonial-author">Aaditya</p>
             </div>
             
             <!-- Video Testimonial Card 2 -->
             <div class="video-testimonial-card" onclick="openModal('video2')">
-                <video class="video-testimonial" id="video2" autoplay loop muted>
+                <video class="video-testimonial" id="video2" muted loop>
                     <source src="student feedback/student reel 2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -118,7 +117,7 @@
     
             <!-- Video Testimonial Card 3 -->
             <div class="video-testimonial-card" onclick="openModal('video3')">
-                <video class="video-testimonial" id="video3" autoplay loop muted>
+                <video class="video-testimonial" id="video3" muted loop>
                     <source src="student feedback/student reel 4.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -127,13 +126,15 @@
             </div>
         </div>
     </section>
+    
     <!-- Modal for Enlarged Video -->
-    <div id="videoModal" class="video-modal">
-        <span class="close-btn" onclick="closeModal()">×</span>
+    <div id="videoModal" class="video-modal" onclick="closeModal()">
+        <span class="close-btn" onclick="closeModal(event)">×</span>
         <video id="modalVideo" class="modal-video" controls>
             <source id="modalSource" type="video/mp4">
         </video>
     </div>
+    
     <!-- Footerr -->
     <footer class="footer">
         <!-- Finance-themed Animated Objects -->
