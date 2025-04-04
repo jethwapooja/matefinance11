@@ -2,18 +2,64 @@ body {
     font-family: Arial, sans-serif;
     color: white;
 }
-/* Active Page Link Color */
-.nav-item{
-    font-weight:600;
-}
-.navbar .nav-link.active {
-    color: #327dcd !important;  /* Change to blue for active link */
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Styling for hover and active state */
-.navbar .nav-link:hover,
-.navbar .nav-link:focus {
-    color: #0056b3 !important;  /* Darker blue when hovered or focused */
+/* Desktop navigation */
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 25px !important;
+    background-color: white;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Active link styling - full width */
+.nav-item .nav-link.active {
+    background-color: #dddddd !important;
+    border-radius: 0;
+}
+
+/* Divider styling */
+.divider {
+    border-left: 1px solid #b0b0b0;
+    height: 25px;
+    margin: auto 0;
+    display: inline-block;
+}
+
+/* Mobile styles */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        height: auto;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 12px 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .divider {
+        display: none;
+    }
 }
 
 /* Blogs Section //////////////////////////////////////////////////////////////////////*/
@@ -186,21 +232,19 @@ body {
     color: #333;
 }
 
-/* Video Section */
+/* General Section Styles */
 .video-section {
     padding: 60px 20px;
     text-align: center;
     background-color: #f6f6f6;
 }
 
-/* Section Title */
 .section-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
     color: #333;
+    position: relative;
 }
 
 .section-title::after {
@@ -212,7 +256,7 @@ body {
     margin: 10px auto 0;
 }
 
-/* Video Container */
+/* Video Cards */
 .video-container {
     display: flex;
     flex-wrap: wrap;
@@ -220,82 +264,127 @@ body {
     gap: 30px;
 }
 
-/* Video Card */
-.video-card {
-    flex: 1 1 calc(33.33% - 30px); /* Three cards per row */
-    max-width: 300px;
-    height: 595px;
-    cursor: pointer;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+.video-card-new {
+    width: 350px;
+    height: 500px;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Smooth Lift Effect */
-.video-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+.video-card-new:hover {
+    transform: translateY(-10px);
 }
 
-/* Video Styling */
-.video {
+/* Thumbnail + Overlay */
+.video-thumbnail {
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-thumbnail::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Play Button */
+.play-button {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Video Card Content */
+.video-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    height: 40%;
+    box-sizing: border-box;
+}
+
+.text-content {
+    width: 65%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.text-content p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.side-image {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-image img {
     width: 100%;
-    height: 500px; /* Consistent height */
-    border-radius: 10px;
-    transition: opacity 0.3s ease-in-out;
+    height: auto;
+    border-radius: 8px;
     object-fit: cover;
 }
 
-/* Fade Effect on Hover */
-.video-card:hover .video {
-    opacity: 0.9;
-}
-
-/* Video Description */
-.video-description {
-    padding: 8px;
-    margin-top: 10  px;
-    font-size: 1rem;
-    color: #333;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-/* Text Slightly Moves Up on Hover */
-.video-card:hover .video-description {
-    transform: translateY(-5px);
-    color: #007bff;
-}
-
-/* Modal for Enlarged Video */
+/* Modal Styles */
 .video-modal {
     display: none;
     position: fixed;
-    top: 60px !important;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.953);
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    text-align: center;
+    z-index: 9999;
 }
 
-/* Enlarged Video */
-.video-modal .modal-video {
-    max-width: 80%;
-    max-height: 80%;
+.modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: black;
 }
 
-/* Close Button */
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 20px; right: 20px;
     font-size: 30px;
     color: #fff;
     background: rgba(0, 0, 0, 0.7);
@@ -305,33 +394,44 @@ body {
     border-radius: 50%;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .video-card {
-        flex: 1 1 calc(50% - 30px); /* Two cards per row on medium screens */
-    }
-}
-
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .video-container {
-        justify-content: center;
-    }
-
-    .video-card {
-        flex: 1 1 calc(50% - 30px); /* Two cards per row on tablets */
+    .video-card-new {
+        width: 90%;
     }
 }
 
 @media (max-width: 480px) {
-    .video-card {
-        flex: 1 1 100%; /* One card per row on mobile */
+    .video-card-new {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
     }
-}
 
-/* Add continuous video playback */
-.video[muted] {
-    background: black;
-    object-fit: cover;
+    .video-thumbnail {
+        height: 200px;
+    }
+
+    .video-content {
+        flex-direction: row; /* ✅ Keep text and image side by side */
+        align-items: center;
+        text-align: left;
+        padding: 10px;
+    }
+
+    .text-content {
+        width: 65%; /* Keep width split */
+    }
+
+    .side-image {
+        width: 30%;
+        margin-top: 0; /* Remove margin */
+        justify-content: flex-end;
+    }
+
+    .side-image img {
+        max-width: 80px;
+    }
 }
 
 
