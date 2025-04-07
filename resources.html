@@ -333,24 +333,30 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
-    function openModal(videoSrc) {
-        const modal = document.getElementById('videoModal');
-        const modalVideo = document.getElementById('modalVideo');
-        const modalSource = document.getElementById('modalSource');
+function openModal(videoSrc) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalSource = document.getElementById('modalSource');
 
-        modalSource.src = videoSrc;
-        modalVideo.load();
-        modal.style.display = 'flex';
-    }
+    modalSource.src = videoSrc;
+    modalVideo.muted = false;
+    modalVideo.load();
+    modal.style.display = 'flex';
+}
 
-    function closeModal(e) {
-        if (e) e.stopPropagation();
-        const modal = document.getElementById('videoModal');
-        const modalVideo = document.getElementById('modalVideo');
+function closeModal(e) {
+    if (e) e.stopPropagation();
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalSource = document.getElementById('modalSource');
 
-        modalVideo.pause();
-        modal.style.display = 'none';
-    }
+    modalVideo.pause();
+    modalVideo.removeAttribute('src');     // Remove video source
+    modalSource.removeAttribute('src');    // Clear source tag too
+    modalVideo.load();                     // Reset video element
+    modal.style.display = 'none';
+}
+
 </script>
   
 
