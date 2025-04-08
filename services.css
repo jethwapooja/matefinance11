@@ -182,11 +182,12 @@ body {
 /* Tagline at Bottom */
 .tagline {
     margin-top: auto; /* Pushes tagline to the bottom */
-    font-size: 1.3rem !important;
+    font-size: 1rem !important;
     font-weight: bold;
-    color: #007bff !important; /* Blue color for tagline */
+    color: #08b531 !important; /* Blue color for tagline */
     text-align: center;
     padding-top: 15px;
+    font-style: italic;
 }
 
 /* Styling for "MUTUAL FUNDS Sahi Hai" */
@@ -227,6 +228,9 @@ body {
         margin: auto;
     }
 }
+
+
+
 
 
 
