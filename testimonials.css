@@ -225,10 +225,9 @@ body {
 
 
 /* video Testimonials Section ////////////////////////////////////////*/
-
 .video-testimonial-section {
     padding: 60px 0;
-    background-color:#f6f6f6;
+    background-color: #f6f6f6;
     text-align: center;
 }
 
@@ -236,12 +235,11 @@ body {
 .section-title {
     font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;
     margin-bottom: 40px;
     color: #333;
-    position: relative;
     animation: fadeIn 1s ease-in-out;
 }
+
 
 /* Video Testimonial Container */
 .video-testimonial-container {
@@ -260,39 +258,23 @@ body {
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    
-    /* Entrance animation */
     opacity: 0;
     transform: translateY(30px) scale(0.8);
     animation: zoomFadeIn 1s ease-in-out forwards;
     animation-delay: var(--delay, 0s);
-    
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.3s ease-in-out;
 }
 
-/* Different delays for staggered appearance */
-.video-testimonial-card:nth-child(1) {
-    --delay: 0s;
-}
-.video-testimonial-card:nth-child(2) {
-    --delay: 0.2s;
-}
-.video-testimonial-card:nth-child(3) {
-    --delay: 0.4s;
-}
-.video-testimonial-card:nth-child(4) {
-    --delay: 0.6s;
-}
+.video-testimonial-card:nth-child(1) { --delay: 0s; }
+.video-testimonial-card:nth-child(2) { --delay: 0.2s; }
+.video-testimonial-card:nth-child(3) { --delay: 0.4s; }
 
-/* Hover Effect: 3D Tilt & Glow */
 .video-testimonial-card:hover {
     transform: scale(1.05) rotateX(8deg) rotateY(8deg);
     box-shadow: 0 15px 30px rgba(0, 123, 255, 0.4);
@@ -300,50 +282,89 @@ body {
     animation-play-state: paused;
 }
 
-/* Glow Effect on Hover */
 .video-testimonial-card::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 123, 255, 0.2);
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     border-radius: inherit;
 }
-
 .video-testimonial-card:hover::before {
     opacity: 1;
     box-shadow: 0 0 20px rgba(158, 176, 195, 0.8);
 }
 
-/* Video Styling */
-.video-testimonial {
+/* Thumbnail Wrapper */
+.thumbnail-wrapper {
+    position: relative;
     width: 100%;
     height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 20px;
+}
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.play-icon {
+    width: 40px;
+    height: 40px;
+}
+.video-testimonial-card:hover .play-overlay {
+    opacity: 1;
 }
 
-/* Testimonial Description */
+/* Description & Author */
 .video-testimonial-description {
     font-size: 1rem;
-    color: #000000;
-    margin-bottom: 10px;
+    color: #000;
+    margin: 15px 0 10px;
     font-style: italic;
 }
-
-/* Testimonial Author Name */
 .video-testimonial-author {
     font-size: 1.2rem;
     color: #007bff;
     font-weight: bold;
 }
+/* Designation Styling */
+.video-testimonial-role {
+    font-size: 1rem;
+    color: #007bff;
+    margin: 2px 0;
+    font-weight: 500;
+}
 
-/* Modal Styles */
+/* Company Name Styling */
+.video-testimonial-company {
+    font-size: 0.95rem;
+    color: #007bff;
+    font-weight: 600;
+}
+/* Modal */
 .video-modal {
     position: fixed;
     top: 60px;
@@ -357,15 +378,12 @@ body {
     z-index: 1000;
     animation: fadeIn 0.3s ease-out;
 }
-
-.video-modal .modal-video {
+.modal-video {
     width: 100%;
     max-width: 800px;
     max-height: 70vh;
     border-radius: 10px;
 }
-
-/* Close Button */
 .close-btn {
     position: absolute;
     top: 20px;
@@ -384,19 +402,17 @@ body {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes zoomFadeIn {
     0% { opacity: 0; transform: translateY(30px) scale(0.8); }
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     .video-testimonial-container {
         flex-direction: column;
         align-items: center;
     }
-
     .video-testimonial-card {
         width: 90%;
         margin-bottom: 20px;
